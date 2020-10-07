@@ -1,10 +1,7 @@
 package Worker;
 
 public class Worker {
-    @FunctionalInterface
-    public interface OnTaskDoneListener {
-        void onDone(String result);
-    }
+
 
     private OnTaskDoneListener callback;
 
@@ -18,16 +15,6 @@ public class Worker {
         }
     }
 
-    @FunctionalInterface
-    public interface OnTaskErrorListener {
-        void onError(String store);
-    }
-
-    private OnTaskErrorListener errorCallback;
-
-    public Worker(OnTaskErrorListener errorCallback) {
-        this.errorCallback = errorCallback;
-    }
 
     public void startMisfortune() {
         for (int i = 0; i < 100; i++) {
@@ -39,4 +26,12 @@ public class Worker {
 
         }
     }
+
+    public Worker(OnTaskErrorListener errorCallback) {
+        this.errorCallback = errorCallback;
+    }
+
+    private OnTaskErrorListener errorCallback;
+
+
 }

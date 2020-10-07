@@ -9,14 +9,8 @@ public class Calculator {
     BinaryOperator<Integer> plus = (x, y) -> x + y;
     BinaryOperator<Integer> minus = (x, y) -> x - y;
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
-    BinaryOperator<Integer> devide = (x, y) -> {
-        if (y != 0) {
-             a = x/y;
-        } else {
-            System.out.println("нельзя делить на 0 ");}
+    BinaryOperator<Integer> devide = (x, y) -> y != 0 ? a = x / y :  Integer.MAX_VALUE;
 
-        return a;
-    };
 // не было проверки при делении на ноль. Также будут ошибки при  делении ,т.к. тип Целочисленный.
 
 
